@@ -6,7 +6,7 @@ require("dotenv").config();
 const app = express();
 app.use(cors());
 app.use(express.json());
-
+const PORT = process.env.PORT || 8080;
 /*
 app.get("/", async (req, res) => {
     const { data, error } = await resend.emails.send({
@@ -46,5 +46,5 @@ app.post("/api/form", async (req, res) => {
     }
 });
 app.listen(3000, () => {
-    console.log("Listening on http://localhost:3000");
+    console.log(`Server running on port ${PORT}`);
 });
